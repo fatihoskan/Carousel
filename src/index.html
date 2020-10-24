@@ -2,7 +2,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Title</title>
-		<link rel="stylesheet" href="../css/dist/main.css">
+		<link rel="stylesheet" href="../css/dist/main.css"> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css"> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
 	</head>
 	<body> 
 		<div class="container">
@@ -13,7 +15,66 @@
 				<span>Sculpture</span>
 			</div>
 			<div class="card-container">
-				<img src="../assets/icons/left-arrow.svg" class="icon left" alt="">
+
+				<a href="javascript:;" class="prev-btn">
+					<img src="../assets/icons/left-arrow.svg"  alt="">
+				</a>
+				<a href="javascript:;" class="next-btn">
+					<img src="../assets/icons/right-arrow.svg" alt="">
+				</a>
+				<div class="swiper-container">
+					<!-- Additional required wrapper -->
+					<div class="swiper-wrapper">
+						<!-- Slides -->
+						<div class="swiper-slide">
+							<a href="#">
+								<img src="../assets/images/vase.png" alt="">
+								
+								<h2>Britta Clay Art</h2>
+								<h6>Sat, 24 October 2020</h6>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="#">
+								<img src="../assets/images/baloon.png" alt="">
+								<h2>Belgian Balloon Throphy</h2>
+								<h6>Sat, 20 May 2020</h6>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="#">
+								<img src="../assets/images/rock.png" alt=""> 
+								<h2>Way of the Hunt</h2>
+								<h6>Fri, 14 August 2020</h6>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="#">
+								<img src="https://picsum.photos/270/170?random=1">
+								<h2>Wild Life</h2>
+								<h6>Wed, 12 September 2020</h6>
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="#">
+								<img src="https://picsum.photos/270/170?random=2">
+								<h2>Happy B-Day</h2>
+								<h6>Thu, 29 June 2020</h6>
+							</a>
+						</div>
+						...
+					</div>
+				
+					<!-- If we need navigation buttons
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> -->
+				
+				</div>
+			</div>
+			
+
+			<!-- <div class="card-container">
+				
 				<ul>
 					<li>
 						<a href="#">
@@ -38,10 +99,21 @@
 					</li>
 				</ul>
 				<img src="../assets/icons/right-arrow.svg" class="icon right" alt="">
-			</div>
+			</div> -->
 			<div class="button-container"> 
 				<a href="#" >View More</a>
 			</div>
 		</div>
+
+		<script>
+			var swiper = new Swiper('.card-container .swiper-container', {
+			slidesPerView: 3,
+      		 spaceBetween: 30,
+			navigation: {
+				nextEl: '.card-container .next-btn',
+				prevEl: '.card-container .prev-btn',
+			  },
+			});
+		  </script>
 	</body>
 </html>

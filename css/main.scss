@@ -30,6 +30,7 @@ body {
    box-shadow: 0px 7px 104px rgba(227, 206, 173, 0.74);
    border-radius: 10px;
    padding: 90px 40px;
+   box-sizing: border-box;
    .category-container{
       display: flex;
       justify-content: center;
@@ -62,65 +63,81 @@ body {
 
    .card-container{
       display: flex;
+      width: 1065px;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       margin-bottom: 50px;
-      .icon {
-         width: 54px;
-         height: 54px;
+      box-sizing: border-box;
+      padding: 0 25px;
+      position: relative;
+
+      .next-btn, .prev-btn{
          display: flex;
          align-items: center;
          justify-content: center;
-         transition: 300ms all ease-in-out;
-         cursor: pointer;
-         .left{
-            margin-right: 35px;
-         }
-         .right
-         {
-            margin-left: 35px;
+         width: 54px;
+         height: 54px;
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         transition: 300ms background-color, 300ms border-radius;
+         &.swiper-button-disabled{
+            opacity: .4;
+            &:hover{
+               border-radius: 54px;
+               background-color: rgba(#747069, .03);
+            }
          }
          &:hover{
-            background: rgba(#FEF8EB, .9);
+            border-radius: 54px;
+            background-color: rgba(#747069, .2);
          }
       }
-      ul{
-         display: flex;
-         align-items: center;
-        
-         li{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 271px;
-            height: 280px; 
+
+      .next-btn{
+         right: 20px ;
+      }
+
+      .prev-btn{
+         left: 20px;
+      }
+
+      .swiper-container{
+         
+         width: 873px;
+         .swiper-slide{
+            box-sizing: border-box;
             background: #FFFFFF;
             border: 1px solid #E5E5E5;
-            box-sizing: border-box;
             border-radius: 10px;
-            margin: 0px 12.5px;
+            overflow: hidden;
             a{
+               display: flex;
+               flex-direction: column;
+               align-items: center;
                width: 270px;
-               height: 170px;
-               margin-bottom: 30px;
+               
                img{
-                  border-radius: 10px 10px 0px 0px;
+                  margin-bottom: 30px;
+               }
+               h2{
+                  font-weight: bold;
+                  font-size: 20px;
+                  line-height: 25px; 
+                  text-align: center; 
+                  color: #000000;
+                  margin-bottom: 6px;
+               }
+               h6{
+                  font-weight: normal;
+                  font-size: 16px;
+                  line-height: 20px;
+                  text-align: center;
+                  color: #747069;
+                  margin-bottom: 27px;
                }
             }
-            h2{
-               font-weight: bold;
-               font-size: 20px;
-               line-height: 25px; 
-               text-align: center; 
-               color: #000000;
-            }
-            h6{
-               font-weight: normal;
-               font-size: 16px;
-               line-height: 20px;
-               text-align: center;
-               color: #747069;
-            }
+            
          }
       }
    }

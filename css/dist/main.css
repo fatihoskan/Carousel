@@ -28,6 +28,7 @@ body {
   box-shadow: 0px 7px 104px rgba(227, 206, 173, 0.74);
   border-radius: 10px;
   padding: 90px 40px;
+  box-sizing: border-box;
 }
 .container .category-container {
   display: flex;
@@ -57,65 +58,76 @@ body {
 }
 .container .card-container {
   display: flex;
+  width: 1065px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 50px;
+  box-sizing: border-box;
+  padding: 0 25px;
+  position: relative;
 }
-.container .card-container .icon {
-  width: 54px;
-  height: 54px;
+.container .card-container .next-btn, .container .card-container .prev-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 300ms all ease-in-out;
-  cursor: pointer;
+  width: 54px;
+  height: 54px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 300ms background-color, 300ms border-radius;
 }
-.container .card-container .icon .left {
-  margin-right: 35px;
+.container .card-container .next-btn.swiper-button-disabled, .container .card-container .prev-btn.swiper-button-disabled {
+  opacity: 0.4;
 }
-.container .card-container .icon .right {
-  margin-left: 35px;
+.container .card-container .next-btn.swiper-button-disabled:hover, .container .card-container .prev-btn.swiper-button-disabled:hover {
+  border-radius: 54px;
+  background-color: rgba(116, 112, 105, 0.03);
 }
-.container .card-container .icon:hover {
-  background: rgba(254, 248, 235, 0.9);
+.container .card-container .next-btn:hover, .container .card-container .prev-btn:hover {
+  border-radius: 54px;
+  background-color: rgba(116, 112, 105, 0.2);
 }
-.container .card-container ul {
-  display: flex;
-  align-items: center;
+.container .card-container .next-btn {
+  right: 20px;
 }
-.container .card-container ul li {
+.container .card-container .prev-btn {
+  left: 20px;
+}
+.container .card-container .swiper-container {
+  width: 873px;
+}
+.container .card-container .swiper-container .swiper-slide {
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.container .card-container .swiper-container .swiper-slide a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 271px;
-  height: 280px;
-  background: #FFFFFF;
-  border: 1px solid #E5E5E5;
-  box-sizing: border-box;
-  border-radius: 10px;
-  margin: 0px 12.5px;
-}
-.container .card-container ul li a {
   width: 270px;
-  height: 170px;
+}
+.container .card-container .swiper-container .swiper-slide a img {
   margin-bottom: 30px;
 }
-.container .card-container ul li a img {
-  border-radius: 10px 10px 0px 0px;
-}
-.container .card-container ul li h2 {
+.container .card-container .swiper-container .swiper-slide a h2 {
   font-weight: bold;
   font-size: 20px;
   line-height: 25px;
   text-align: center;
   color: #000000;
+  margin-bottom: 6px;
 }
-.container .card-container ul li h6 {
+.container .card-container .swiper-container .swiper-slide a h6 {
   font-weight: normal;
   font-size: 16px;
   line-height: 20px;
   text-align: center;
   color: #747069;
+  margin-bottom: 27px;
 }
 .container .button-container {
   display: flex;
